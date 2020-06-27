@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+body {
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Major Mono Display", monospace;
+}
+body .container {
+  line-height: 1.8;
+  font-size: 20px;
+  color: #00b0ff;
+  padding: 25px 25px 25px 25px;
+}
+body .container .welcome {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 20px;
+  border: 2px dashed #c7c7c7;
+  padding: 20px 20px 20px 20px;
+  color: #ffffff;
+}
+body .container .nameEntry {
+  margin-left: 30px;
+  color: #fffc58;
+}
+body .container .nameEntry input {
+  font-family: inherit;
+  width: 27.5%;
+  border: 0;
+  border-bottom: 2px solid #fffc58;
+  outline: 0;
+  font-size: 1.5rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+}
+body .container .animation {
+  margin-top: 30px;
+  margin-left: 30px;
+  color: #fffc58;
+  display: none;
+}
+body .container .animation #parent {
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+body .container .commandLine {
+  display: none;
+}
+body .container .commandLine input {
+  font-family: inherit;
+  border: 0;
+  outline: 0;
+  font-size: 1.5rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  type: uppercase;
+}
+body .container .commandLine .output .error {
+  color: #ff6e67;
+}
+body .container .commandLine .output .ls {
+  color: #00ff9c;
+}
+body .container .commandLine .output .bio {
+  color: white;
+}
+
+.command {
+  color: #00ff9c;
+}
+
+.smallText {
+  padding-top: 10px;
+  color: grey;
+  font-size: 20px;
+}
+
+#userName {
+  color: #00ff9c;
+}
+
+/* Animation */
+/* text animation */
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 500px;
+  }
+}
+
+/*# sourceMappingURL=master.css.map */
