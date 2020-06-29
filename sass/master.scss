@@ -75,9 +75,54 @@ body{
 				}
 				.ls {
 					color: #00ff9c;
+
+				}
+				.certificates {
+					// color: #fffc58;
+					// padding-left: 45px; 
+					line-height: normal;
+					h2 {
+						font-size: 25px;
+					}
+					p {
+						font-size: 20px;
+					}
 				}
 				.bio {
 					color: white;
+				}
+				.skills {
+					table {
+						th {
+							padding-right: 30px;
+						}
+						td {
+							padding-right: 30px; 
+							width: 80%;
+							.progress {
+								color: white;
+								line-height: 1.5;
+								padding: 5px;
+								background: #2a2a2a;
+								border-radius: 6px;
+								box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+								.progress-bar {
+									height: 20px;
+									border-radius: 4px;
+									background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+									box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+								}
+							}
+
+						}
+					}
+				}
+				.projects {
+					line-height: normal;
+				}
+				.contact {
+					color: #00ff9c;
+					padding-left: 45px; 
 				}
 			}
 		}
@@ -96,7 +141,17 @@ body{
 	color: #00ff9c;
 }
 
-
+hr{
+	color: white;
+	margin-top: 20px;
+}
+a {
+	text-decoration: none;
+	color: white;
+	&:hover{
+		text-decoration: underline;
+	}
+}
 
 /* Animation */
 // #parent {
