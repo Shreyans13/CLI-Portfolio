@@ -1,7 +1,6 @@
 let	nameUser
 let commandHeader
 let commandBox
-console.log(nameUser)
 document.getElementById('enterButton').addEventListener('keyup', () => {
 	if (event.keyCode === 13) {
 		document.getElementById('enterButton').disabled = true
@@ -37,7 +36,6 @@ document.getElementById('enterButton').addEventListener('keyup', () => {
 	input = `-> </span></span><input id="commandButton" type="text" name="command" autocomplete="false" placeholder="Enter command" onkeyup="caller(event)"><div class="output"></div>`
 
 	commandBox = commandHeader + input
-console.log(commandBox);
 
 })
 
@@ -182,18 +180,23 @@ let caller = (event) => {
 
 		let command = document.querySelectorAll('#commandButton')
 		command = command[command.length-1].value
-		console.log(command)
-
 
 		let output = document.querySelectorAll('.output')[document.querySelectorAll('.output').length -1]
-		console.log(output)
-
+		
 		command = command.replace(/\s+/g, " ").trim().toUpperCase();
-		console.log(command)
 		if (command.split(' ')[0] == 'CD') {
-			cdCommand(command, output)
+			if (command.split(' ')[1] == '..'){
+				cdCommand(command, output)
+				// output.innerHTML = `<p class="error">-portfolio: COMMAND: not found </p> ${commandBox}`
+			} else if (iC || iP || iPW ){
+				output.innerHTML = `<p class="error">-portfolio: COMMAND: not found </p> ${commandBox}`
+			} else {
+				cdCommand(command, output)
+
+				// output.innerHTML = `<p class="error">-portfolio: COMMAND: not found </p> ${commandBox}`
+				// cdCommand(command, output)
+			}
 		} else if (command == 'LS' || command == 'DIR') {
-			console.log(iC);
 			if (iC) {
 				output.innerHTML = `
 					<div class='certificates'>
@@ -303,14 +306,13 @@ let caller = (event) => {
 		} else if (command == 'CLS' || command == 'CLEARSCREEN') {
 			document.querySelector('.commandLine').innerHTML = `${commandBox}`
 		} else if (command == 'EXIT') {
-			document.querySelector('.container').innerHTML = `<div class='exit'><h1>Thank You</h1></div>`
+			document.querySelector('.container').innerHTML = `<div class='exit'><h1>Thank You</h1><p>⭐ Made with ❤️ by Shreyans Jain ⭐</p></div>`
 		} else {
 			output.innerHTML = `<p class="error">-portfolio: COMMAND: not found </p> ${commandBox}`
 		}
 		let btn = document.querySelectorAll('#commandButton')
 		btn = btn[btn.length-1]
 		btn.focus()
-		console.log(btn)
 	}
 	window.scrollTo(0,document.body.scrollHeight);
 
