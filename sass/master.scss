@@ -128,6 +128,20 @@ body{
 					color: #00ff9c;
 					padding-left: 45px; 
 				}
+				.form{ 
+					input,
+					textarea {
+						font-family: inherit;
+						// width: 27.5%;
+						border: 0;
+						border-bottom: 2px solid #fffc58;
+						outline: 0;
+						font-size: 1.5rem;
+						color: white;
+						padding: 7px 0;
+						background: transparent;
+					}
+				}
 			}
 		}
 	}
@@ -157,6 +171,9 @@ a {
 	}
 }
 
+.form input {
+
+}
 /* Animation */
 // #parent {
 //   animation: animated-text 2s steps(30,end) 1s 1 normal both

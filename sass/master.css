@@ -70,9 +70,6 @@ body .container .commandLine .output .ls {
 body .container .commandLine .output .certificates {
   line-height: normal;
 }
-body .container .commandLine .output .certificates h2 {
-  font-size: 25px;
-}
 body .container .commandLine .output .certificates p {
   font-size: 20px;
 }
@@ -106,6 +103,17 @@ body .container .commandLine .output .projects {
 body .container .commandLine .output .contact {
   color: #00ff9c;
   padding-left: 45px;
+}
+body .container .commandLine .output .form input,
+body .container .commandLine .output .form textarea {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid #fffc58;
+  outline: 0;
+  font-size: 1.5rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
 }
 
 .command {

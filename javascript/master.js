@@ -145,7 +145,31 @@ let cdCommand = (command, output) => {
 			</div>
 			${commandBox}`
 		} else if (command.split(' ')[1] == 'SENDAMESSAGE') {
-			output.innerHTML = `${commandBox}`
+			output.innerHTML = `
+			<form action="https://formspree.io/xlepwvrd" method="POST" class='form'>
+				<table>
+					<tr>
+						<label>
+							<td> Your name: </td>
+							<td> <input type="text" name="name" placeholder='Enter your name'> </td>
+						</label>
+					</tr>
+					<tr>
+						<label>
+							<td> Your email: </td>
+							<td> <input type="text" name="_replyto" placeholder='Enter your email'> </td>
+						</label>
+					</tr>
+					<tr>
+						<label>
+							<td> Your message: </td>
+							<td> <textarea name="message" placeholder='Enter your message'></textarea> </td>
+						</label>
+					</tr>
+				</table>
+				<button type="submit">Send</button>
+			</form>
+			${commandBox}`
 		} else {
 			output.innerHTML = `<p class="error">-portfolio: Directory: not found </p> ${commandBox}`	
 		}
