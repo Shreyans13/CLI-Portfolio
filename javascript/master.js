@@ -4,28 +4,22 @@ let commandBox
 console.log(nameUser)
 document.getElementById('enterButton').addEventListener('keyup', () => {
 	if (event.keyCode === 13) {
+		document.getElementById('enterButton').disabled = true
 		// event.preventDefault();
-		// console.log('entered')
 		let parent = document.querySelectorAll('#parent')
 		document.querySelector('.animation').style.display = 'block'
-		// console.log(parent)
 		let counter = 1
 		for(let i = 0 ; i < parent.length ; i++ ){
 			parent[i].style.animation = 'animated-text 1s steps(30,end) 1s 1 normal both'
 			parent[i].style.animationDelay = counter+ 's'
 			counter = counter + 2
-			// console.log('Fuction running')
 		}
-		// console.log('Before')
-		// prompt("this is alert")
-		// console.log('After')	
 		setTimeout(()=>{
 			document.querySelector('.animation').style.display = 'none';
 			document.querySelector('.nameEntry').style.display = 'none';
 			document.querySelector('.commandLine').style.display = 'block';
 		}, 13000);
 	}
-	// console.log(document.getElementById('enterButton').value)
 	
     nameUser = document.getElementById('enterButton').value
 
@@ -38,9 +32,7 @@ document.getElementById('enterButton').addEventListener('keyup', () => {
 			    blurEl.focus()
 			}, 10);
 		};
-    // let commandBox = `<span class="commandHeader"><span id="userName">${nameUser}</span><span style="color: #ff5680; font-weight: bold;">@</span><span style="color:#d57bff ;">Shreyans</span>:/PORTFOLIO$ -> </span><input id="commandButton" type="text" name="command" autocomplete="false" placeholder="Enter command" onkeyup="caller(event)"><div class="output"></div>`
 	commandHeader = `<span class="commandHeader"><span id="userName">${nameUser}</span><span style="color: #ff5680; font-weight: bold;">@</span><span style="color:#d57bff ;">Shreyans</span>:/PORTFOLIO$ `
-// let commandDirectory = `/<span></span>`
 
 	input = `-> </span></span><input id="commandButton" type="text" name="command" autocomplete="false" placeholder="Enter command" onkeyup="caller(event)"><div class="output"></div>`
 
@@ -55,43 +47,6 @@ function onblur (event) {
 	    blurEl.focus()
 	}, 10);
 };
-
-// // let commandBox = `<span class="commandHeader"><span id="userName">${nameUser}</span><span style="color: #ff5680; font-weight: bold;">@</span><span style="color:#d57bff ;">Shreyans</span>:/PORTFOLIO$ -> </span><input id="commandButton" type="text" name="command" autocomplete="false" placeholder="Enter command" onkeyup="caller(event)"><div class="output"></div>`
-// let commandHeader = `
-// <span class="commandHeader">
-// 	<span id="userName">${nameUser}</span>
-// 	<span style="color: #ff5680; font-weight: bold;">@</span><span style="color:#d57bff ;">Shreyans</span>:/PORTFOLIO$ `
-// // let commandDirectory = `/<span></span>`
-
-// let input = `-> </span></span><input id="commandButton" type="text" name="command" autocomplete="false" placeholder="Enter command" onkeyup="caller(event)"><div class="output"></div>`
-
-// let commandBox = commandHeader + input
-console.log(commandBox);
-// let button = document.querySelectorAll('#commandButton')
-// for(let i = 0 ; i < button.length ; i++) {
-// 	button[i].addEventListener('keyup', () => {
-// 		if(event.keyCode === 13) {
-// 			// let ele = document.getElementById('commandButton')
-// 			document.getElementById('commandButton').disabled = 'true'
-// 			let command = document.getElementById('commandButton').value
-// 			console.log(command)
-// 			command = command.toUpperCase()
-// 			if (command == 'ERROR') {
-// 				let output = document.querySelectorAll('.output')[document.querySelectorAll('.output').length -1]
-// 				console.log(output)
-// 				output.innerHTML = `<p class="error">-portfolio: ${output.value}: not found </p> ${commandBox}`
-// 			}
-// 		}
-// 	})
-// }
-
-// let addName = () => {
-// 	// document.getElementById('userName').innerHTML = document.getElementById('enterButton').value
-// 	console.log(document.querySelectorAll('#username'))
-
-// 	// console.log(document.querySelectorAll('#username')[document.querySelectorAll('#username').length -1 ].innerHTML)
-// 	// document.querySelectorAll('#username')[document.querySelectorAll('#username').length -1 ].innerHTML = document.getElementById('enterButton').value
-// }		
 
 let iC = false
 let iP = false
@@ -140,6 +95,33 @@ let cdCommand = (command, output) => {
 						</div>
 					</td>
 				</tr>
+				<tr>
+					<th>Node Js</th>
+					<td>
+						<div class='progress'>
+							<div class="progress-bar" style="width: 85%; background-color: #86e01e;">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>C++ (STLs)</th>
+					<td>
+						<div class='progress'>
+							<div class="progress-bar" style="width: 75%; background-color: #f2d31b;">
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Vue Js</th>
+					<td>
+						<div class='progress'>
+							<div class="progress-bar" style="width: 40%; background-color: #f2b01e;">
+							</div>
+						</div>
+					</td>
+				</tr>
 			</table>
 			</div> ${commandBox}`
 		} else if (command.split(' ')[1] == 'PROJECTS') {
@@ -156,10 +138,10 @@ let cdCommand = (command, output) => {
 			iP = false
 			iPW = false
 			output.innerHTML = `${commandBox}`
-		} else if (command.split(' ')[1] == 'CONTACT') {
+		} else if (command.split(' ')[1] == 'SOCIALLINKS') {
 			output.innerHTML = `<div class='contact'>Like my Work ? Get in touch ?<br>
-			<a href='' style='margin: 50px'><img src="./svg icons/github.svg"></a>
-			<a href='' style='margin: 50px'><img src="./svg icons/linkedin.svg"></a><br>
+			<a href='https://github.com/Shreyans13' style='margin: 50px' target='_blank'><img src="./svg icons/github.svg"></a>
+			<a href='https://www.linkedin.com/in/shreyans-jain-a60902186/' style='margin: 50px' target='_blank'><img src="./svg icons/linkedin.svg"></a><br>
 			</div>
 			${commandBox}`
 		} else if (command.split(' ')[1] == 'SENDAMESSAGE') {
@@ -170,14 +152,10 @@ let cdCommand = (command, output) => {
 }
 let caller = (event) => {
 	if(event.keyCode === 13) {
-		// let ele = document.getElementById('commandButton')
 		
-
 		let cb = document.querySelectorAll('#commandButton')
 		cb[cb.length-1].disabled = true
 
-		// document.getElementById('commandButton').disabled = 'true'
-		
 		let command = document.querySelectorAll('#commandButton')
 		command = command[command.length-1].value
 		console.log(command)
@@ -190,71 +168,68 @@ let caller = (event) => {
 		console.log(command)
 		if (command.split(' ')[0] == 'CD') {
 			cdCommand(command, output)
-			// if (command.split(' ')[1] == 'BIO'){
-				// 	output.innerHTML = `<p class="bio">
-				// 		<span style='font-weight: bold; color: #f600f6'> Shreyans Jain </span> | Shreyans13 <br>
-				// 		I am a student at <span style='color: #ffa500'>Chandigarh University</span> pursuing <span style='color: #4d4dff'>Bachelor of Technology</span> in Computer Science in Engineering.
-				// 		I <span style='color: #ff1a1a'>love coding</span> and i am <span style='color: #ff3333'>passionate</span> to learn <span 'style: color:#00ff9c'>new</span> things. 
-				// 		I also take part in various <span style='color: #00ccff'>coding competitions</span> and <span style='color: #00ccff'>hackathons.</span>
-				// 		<br>
-				// 		I may not be able to solve <strike>all</strike> <span style='color: #ffff4d'>some</span> of your problems.
-				// 	</p> ${commandBox}`
-				// } else if (command.split(' ')[1] == 'CERTIFICATES'){
-				// 	commandBox = commandHeader + `<span>/Certificates/</span>` + input 
-				// 	iC = true
-				// 	output.innerHTML = `${commandBox}`
-				// } else if (command.split(' ')[1] == 'SKILLS') {
-
-				// }else if (command.split(' ')[1] == '..'){
-				// 	commandBox = commandHeader + input 
-				// 	iC = false
-				// 	output.innerHTML = `${commandBox}`
-				// }
-				// else {
-				// 	output.innerHTML = `<p class="error">-portfolio: Directory: not found </p> ${commandBox}`	
-				// }
 		} else if (command == 'LS' || command == 'DIR') {
 			console.log(iC);
 			if (iC) {
 				output.innerHTML = `
 					<div class='certificates'>
-						<div class='' style='border: 3px solid white; padding: 20px;'>
-							<h3>The Web Developer Bootcamp by Udemy</h3>
+						<div class='certificate'>
+							<h3 style="color: #fffc58;">The Web Developer Bootcamp by Udemy</h3>
 							<p>Issued May 2020</p>
-							<a href="">Verify Credential</a>
+							<a href="https://www.udemy.com/certificate/UC-4385ddae-69af-4b92-8e02-6e8324dc6543/" target='_blank'>Verify Credential</a>
 						</div>
-						<div class='' style='border: 3px solid white; padding: 20px;'>	
-							<h3>Version Control with Git by Coursera</h3>
+						<div class='certificate'>	
+							<h3 style="color: #fffc58;">Version Control with Git by Coursera</h3>
 							<p>Issued May 2020</p>
-							<a href="">Verify Credential</a>
+							<a href="https://coursera.org/share/f028875f7bbe5246d4c7eea55d06404a" target='_blank'>Verify Credential</a>
 						</div>
-						<div class='' style='border: 3px solid white; padding: 20px;'>
-							<h3>Server Side Development using Node Js and MongoDB</h3>
+						<div class='certificate'>
+							<h3 style="color: #fffc58;">Server Side Development using Node Js and MongoDB</h3>
 							<p>In Progress</p>
 						</div>
 					</div>
 
 				${commandBox}`
-				// window.scrollTo(0,document.body.scrollHeight);
-				// return
 			} else if (iP) { 
 				output.innerHTML = `
 				<div class='projects'>
-					<div class='' style='border: 3px solid white; padding: 20px;'>
-						<h3>Command Line Portfolio</h3>
-						<a href="">GitHub Repo</a>
-						<p> Deployed at <a href=''>GitHub Pages</a>
-					</div>
-					<div class='' style='border: 3px solid white; padding: 20px;'>
-						<h3>Command Line Portfolio</h3>
-						<a href="">GitHub Repo</a>
-						<p> Deployed at <a href=''>GitHub Pages</a>
-					</div>
-					<div class='' style='border: 3px solid white; padding: 20px;'>
-						<h3>Command Line Portfolio</h3>
-						<a href="">GitHub Repo</a>
-						<p> Deployed at <a href=''>GitHub Pages</a>
-					</div>
+					<ul class='project'>
+						<li>
+							<h3>Command Line Portfolio</h3>
+							<a href="https://github.com/Shreyans13/CLI-Portfolio" target='_blank'>GitHub Repo</a>
+							<p> Deployed at <a href=''>Still Deploying</a></p>
+						</li>
+						<li class='project'>
+							<h3>Actions on Google</h3>
+							<a href="https://github.com/Shreyans13/Actions-on-google" target='_blank'>GitHub Repo</a>
+							<p> Deployed at Google Assistant. Open your google assistant and say Talk to Shreyans Jain&#39;s resumse</p>
+						</li>
+						<li class='project'>
+							<h3>The game of Chess</h3>
+							<a href="https://github.com/Shreyans13/The-game-of-Chess" target='_blank'>GitHub Repo</a>
+							<p> Deployed at <a href='https://github.com/Shreyans13/The-game-of-Chess' target='_blank'>GitHub Pages</a></p>
+						</li>
+						<li class='project'>
+							<h3>Yelp Camp Udemy</h3>
+							<a href="https://github.com/Shreyans13/Yelp-Camp-Udemy" target='_blank'>GitHub Repo</a>
+							<p> Deployed at <a href='https://peaceful-reaches-73403.herokuapp.com/' target='_blank'>Heroku</a></p>
+						</li>
+						<li class='project'>
+							<h3>Keyboard Gama Patatap Clone</h3>
+							<a href="https://github.com/Shreyans13/Keyboard-Game-Patatap-Clone" target='_blank'>GitHub Repo</a>
+							<p> Deployed at <a href='https://shreyans13.github.io/Keyboard-Game-Patatap-Clone/' target='_blank'>GitHub Pages</a></p>
+						</li>
+						<li class='project'>
+							<h3>To Do List</h3>
+							<a href="https://github.com/Shreyans13/To-Do-List" target='_blank'>GitHub Repo</a>
+							<p> Deployed at <a href='https://shreyans13.github.io/To-Do-List/' target='_blank'>GitHub Pages</a></p>
+						</li>
+						<li class='project'>
+							<h3>Museum of Candy Bootstrap4</h3>
+							<a href="https://github.com/Shreyans13/Museum-of-Candy-Bootstrap4" target='_blank'>GitHub Repo</a>
+							<p> Deployed at <a href='https://shreyans13.github.io/Museum-of-Candy-Bootstrap4/' target='_blank'>GitHub Pages</a></p>
+						</li>
+					</ul>
 				</div>
 				${commandBox}
 				`
@@ -274,8 +249,8 @@ let caller = (event) => {
 					<p>skills</p>
 					<p>/projects</p>
 					<p>/projectsInWork</p>
-					<p>/otherLinks</p>
-					<p>contact</p>
+					<p>/socialLinks</p>
+					<p>sendAMessage</p>
 				</div>
 
 				</p> ${commandBox}`
@@ -294,19 +269,20 @@ let caller = (event) => {
 				<p>LS - To view all folders and files in the directory</p>
 				<p>CD - To change the current directory</p>
 				<p>REFRESH - To refresh the page</p>
+				<p>CLEARSCREEN - To clear the page</p>
+				<p>CLS - To clear the page</p>
+				<p>EXIT - To exit the page</p>
 			</div>
 			</p> ${commandBox}`
 		} else if (command == 'REFRESH'){
 			location.reload()
 		} else if (command == 'CLS' || command == 'CLEARSCREEN') {
 			document.querySelector('.commandLine').innerHTML = `${commandBox}`
-		}
-		else {
+		} else if (command == 'EXIT') {
+			document.querySelector('.container').innerHTML = `<div class='exit'><h1>Thank You</h1></div>`
+		} else {
 			output.innerHTML = `<p class="error">-portfolio: COMMAND: not found </p> ${commandBox}`
-			
-			// addName()
 		}
-		// window.scrollTo(0,document.body.scrollHeight);
 		let btn = document.querySelectorAll('#commandButton')
 		btn = btn[btn.length-1]
 		btn.focus()
