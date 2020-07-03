@@ -207,12 +207,13 @@ let caller = (event) => {
 						</div>
 						<div class='certificate'>	
 							<h3 style="color: #fffc58;">Version Control with Git by Coursera</h3>
-							<p>Issued May 2020</p>
+							<p>Issued June 2020</p>
 							<a href="https://coursera.org/share/f028875f7bbe5246d4c7eea55d06404a" target='_blank'>Verify Credential</a>
 						</div>
 						<div class='certificate'>
 							<h3 style="color: #fffc58;">Server Side Development using Node Js and MongoDB</h3>
-							<p>In Progress</p>
+							<p>Issued July 2020</p>
+							<a href="https://www.coursera.org/account/accomplishments/records/YWSZEUK6ZTKW" target='_blank'>Verify Credential</a>
 						</div>
 					</div>
 
