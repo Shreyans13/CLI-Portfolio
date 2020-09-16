@@ -57,7 +57,7 @@ let cdCommand = (command, output) => {
 				I <span style='color: #ff1a1a'>love coding</span> and i am <span style='color: #ff3333'>passionate</span> to learn <span 'style: color:#00ff9c'>new</span> things. 
 				I also take part in various <span style='color: #00ccff'>coding competitions</span> and <span style='color: #00ccff'>hackathons.</span>
 				<br>
-				I may not be able to solve <strike>all</strike> <span style='color: #ffff4d'>some</span> of your problems.
+				I may be able to solve <strike>all</strike> <span style='color: #ffff4d'>some</span> of your problems.
 			</p> ${commandBox}`
 		} else if (command.split(' ')[1] == 'CERTIFICATES'){
 			commandBox = commandHeader + `<span>/Certificates/</span>` + input 
